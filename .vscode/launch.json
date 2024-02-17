@@ -8,8 +8,19 @@
             "name": "Python デバッガー: 現在のファイル",
             "type": "debugpy",
             "request": "launch",
-            "program": "${file}",
-            "console": "integratedTerminal"
+            "module": "streamlit",
+            //"program": "${file}",
+            "console": "integratedTerminal",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}",
+            },
+            "args": [                              // オプションはコレ
+                "run",
+                "main.py",
+                "--server.port",
+                "5678"
+            ]
         }
+        
     ]
 }
